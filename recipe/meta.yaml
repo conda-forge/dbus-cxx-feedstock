@@ -24,7 +24,7 @@ source:
     - ssize_t.patch
 
 build:
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: true
   skip: true  # [win]
 
@@ -32,13 +32,13 @@ requirements:
   build:
     - dbus
     - expat
-    - glib
+    - glib 2.51.*
     - pkg-config
     - toolchain
   run:
     - dbus
     - expat
-    - glib
+    - glib 2.51.*
 
 test:
   commands:
