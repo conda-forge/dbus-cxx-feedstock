@@ -29,15 +29,17 @@ build:
 
 requirements:
   build:
+    - pkg-config
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - dbus
     - expat
-    - glib 2.55.*
-    - pkg-config
-    - toolchain
+    - glib
   run:
     - dbus
     - expat
-    - glib 2.55.*
+    - glib
 
 test:
   commands:
