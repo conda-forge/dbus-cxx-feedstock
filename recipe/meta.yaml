@@ -24,7 +24,7 @@ source:
     - ssize_t.patch
 
 build:
-  number: 2
+  number: 1002
   skip: true  # [win]
 
 requirements:
