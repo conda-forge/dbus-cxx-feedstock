@@ -9,22 +9,19 @@
 # own little release.
 
 {% set name = "dbus-cxx" %}
-{% set version = "0.9.1" %}
-{% set sha256 = "a762af8fbee01434f925ce8c3140cb43088390d5cab492e802fe6873d809cc6c" %}
+{% set version = "0.9.2" %}
+{% set sha256 = "4f140668f2529ecbdce99afbb89f8a977aa47a36248d5f4943b3660316752ee8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: libdbus-c---{{ version }}pw.tar.gz
   url: https://github.com/pkgw/dbus-cplusplus/releases/download/v{{ version }}pw/libdbus-c---{{ version }}pw.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - ssize_t.patch
 
 build:
-  number: 2
+  number: 1000
   skip: true  # [win]
 
 requirements:
