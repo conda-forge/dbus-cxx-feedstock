@@ -21,7 +21,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1003
+  number: 1004
   skip: true  # [win]
   run_exports:
     # While this package is in maintenance mode, if any new releases are made it
@@ -44,8 +44,6 @@ requirements:
 test:
   commands:
     - ls $PREFIX/lib/libdbus-c++-glib-1$SHLIB_EXT
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://dbus-cplusplus.sourceforge.net/
