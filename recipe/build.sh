@@ -1,14 +1,8 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -o xtrace -o nounset -o pipefail -o errexit
 
-if [ -n "$OSX_ARCH" ] ; then
-    export CXXFLAGS="$CXXFLAGS -stdlib=libc++"
-else
-    export CFLAGS="$CFLAGS -I$PREFIX/include"
-    export CXXFLAGS="$CXXFLAGS -I$PREFIX/include"
-    export LDFLAGS="$LDFLAGS -L$PREFIX/lib"
-fi
+autoreconf --force --verbose --install
 
 ./configure --prefix=$PREFIX --disable-ecore --disable-tests --disable-examples || { cat config.log ; exit 1 ; }
 make
